@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <title>RetchQwatch v1</title>
+            <h1>Press any video to watch it.</h1>
+            <div class="adContain">
+                <img src="ad1.png">
+            </div>
+            <h2 id="statusBlocker"></h2> <h2>This will tell you if adblock is on.</h2>
+            <div class="blockNoAds">
+                <script>
+                    if window.ShowAds {
+                        document.getElementById(statusBlocker).innerHTML = 'Good. No ad blocker.';
+                        
+                        ga('send', 'event', 'User Interaction', 'Adblock', 'Disabled');
+                    }
+                    else {
+                        document.getElementById().innerHTML = 'Please turn off your adblocker on this website.';
+                        
+                        ga('send', 'event', 'User Interaction', 'Adblock', 'Enabled');
+                    }
+                </script>
+            </div>
+            <script>
+                window.ShowAds = true
+            </script>
+            <style>
+                .adContain {
+                    height: 25%; width: 25%;
+                }
+                .blockNoAds {
+                    height: 10%; width: 10%;
+                }
+            </style>
+        </body>
+    </head>
+</html>
